@@ -29,13 +29,23 @@ export const aiChatMessageSchema = z.object({
   content: z.string(),
 });
 
-export const componentInstanceSchema = z.object({
-  id: z.string(),
-  type: z.string(),
-  label: z.string(),
-  props: z.record(z.any()),
-  children: z.array(z.lazy(() => componentInstanceSchema)).default([]),
-});
+export type ComponentInstance = {
+  id: string;
+  type: string;
+  label: string;
+  props: Record<string, unknown>;
+  children: ComponentInstance[];
+};
+
+export const componentInstanceSchema: z.ZodType<ComponentInstance> = z.lazy(() =>
+  z.object({
+    id: z.string(),
+    type: z.string(),
+    label: z.string(),
+    props: z.record(z.unknown()),
+    children: z.array(componentInstanceSchema).default([]),
+  })
+);
 
 export const projectBlueprintSchema = z.object({
   summary: z.string(),
@@ -67,7 +77,6 @@ export type GenerationRequest = z.infer<typeof generationRequestSchema>;
 export type GenerationResponse = z.infer<typeof generationResponseSchema>;
 export type DesignVariation = z.infer<typeof designVariationSchema>;
 export type ProjectBlueprint = z.infer<typeof projectBlueprintSchema>;
-export type ComponentInstance = z.infer<typeof componentInstanceSchema>;
 export type AIChatMessage = z.infer<typeof aiChatMessageSchema>;
 
 export type ProjectRecord = {
