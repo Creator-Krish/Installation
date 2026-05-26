@@ -34,7 +34,7 @@ export type ComponentInstance = {
   type: string;
   label: string;
   props: Record<string, unknown>;
-  children: ComponentInstance[];
+  children?: ComponentInstance[];
 };
 
 export const componentInstanceSchema: z.ZodType<ComponentInstance> = z.lazy(() =>
