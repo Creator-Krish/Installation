@@ -1,0 +1,263 @@
+:root {
+  color-scheme: dark;
+  font-family: "Segoe UI", "SF Pro Display", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(82, 180, 255, 0.22), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(64, 255, 182, 0.18), transparent 28%),
+    #08111f;
+  color: #eff6ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: transparent;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+.shell {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 32px 24px 56px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-end;
+  margin-bottom: 28px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.6rem, 5vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #7ee8c4;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+}
+
+.summary {
+  max-width: 760px;
+  color: #bfd3ea;
+  line-height: 1.6;
+}
+
+.status-card,
+.panel {
+  border: 1px solid rgba(187, 225, 255, 0.15);
+  background: rgba(5, 14, 27, 0.82);
+  backdrop-filter: blur(24px);
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+}
+
+.status-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+  min-width: 320px;
+}
+
+.status-card p {
+  margin: 4px 0 0;
+  color: #94a8bf;
+}
+
+.status-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: #7c8ea4;
+  box-shadow: 0 0 20px rgba(124, 142, 164, 0.5);
+}
+
+.status-dot.active {
+  background: #51f0b7;
+  box-shadow: 0 0 22px rgba(81, 240, 183, 0.9);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.9fr;
+  gap: 20px;
+}
+
+.panel {
+  padding: 22px;
+}
+
+.command-panel {
+  grid-row: span 2;
+}
+
+.panel-header h2,
+.workflow-card h3 {
+  margin: 0;
+}
+
+.panel-header p,
+.workflow-card p,
+.empty-state {
+  color: #97abc3;
+}
+
+.command-box {
+  width: 100%;
+  min-height: 180px;
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(162, 196, 230, 0.16);
+  background: rgba(2, 8, 16, 0.9);
+  color: #eff6ff;
+  resize: vertical;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin: 18px 0 22px;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 12px 18px;
+  background: #17314f;
+  color: #eff6ff;
+  cursor: pointer;
+  transition: transform 120ms ease, background 120ms ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: #214b79;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+button.accent {
+  background: linear-gradient(135deg, #2ae0a0, #4da9ff);
+  color: #04111b;
+  font-weight: 700;
+}
+
+.preview,
+.warning-block,
+.workflow-card,
+.event {
+  border-radius: 18px;
+  border: 1px solid rgba(162, 196, 230, 0.12);
+  background: rgba(10, 20, 37, 0.76);
+}
+
+.preview {
+  padding: 18px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 14px 0;
+}
+
+.chip {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(76, 171, 255, 0.15);
+  color: #86c7ff;
+  font-size: 0.92rem;
+}
+
+.notes {
+  margin: 0;
+  padding-left: 18px;
+  color: #c8d8ea;
+}
+
+.warning-block {
+  margin-top: 16px;
+  padding: 14px 16px;
+  color: #ffd7b2;
+  background: rgba(82, 41, 6, 0.56);
+}
+
+.workflow-list,
+.event-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.workflow-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px;
+}
+
+.event {
+  padding: 14px 16px;
+}
+
+.event p,
+.event span {
+  margin: 4px 0 0;
+}
+
+.event-completed {
+  border-color: rgba(81, 240, 183, 0.25);
+}
+
+.event-failed {
+  border-color: rgba(255, 127, 127, 0.35);
+}
+
+.empty-state {
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(10, 20, 37, 0.58);
+  margin-top: 18px;
+}
+
+@media (max-width: 1024px) {
+  .hero,
+  .workflow-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .command-panel {
+    grid-row: auto;
+  }
+
+  .status-card {
+    min-width: 0;
+    width: 100%;
+  }
+}
