@@ -1,6 +1,6 @@
 import { createServer } from "node:http";
 import { Server } from "socket.io";
-import { createApp } from "./app";
+import { App } from "./app.js";
 import { env } from "./config/env";
 import { registerCollaboration } from "./socket/collaboration";
 
