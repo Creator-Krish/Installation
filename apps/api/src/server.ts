@@ -1,9 +1,10 @@
 import { createServer } from "node:http";
 import { Server } from "socket.io";
-import { app } from "./app.js";
+import { createApp } from "./app.js";
 import { env } from "./config/env.js";
 import { registerCollaboration } from "./socket/collaboration.js";
 
+const app = createApp();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
