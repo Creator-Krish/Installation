@@ -1,5 +1,5 @@
 import { nanoid } from "nanoid";
-import { deploymentQueue } from "../lib/queue";
+import { deploymentQueue } from "../lib/queue.js";
 
 export async function queueDeployment(projectId: string, environment: "preview" | "production") {
   const jobId = nanoid(10);
