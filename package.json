@@ -19,5 +19,15 @@
   },
   "dependencies": {
     "zod": "^3.24.1"
+  },
+  "scripts": {
+  "dev": "turbo run dev --parallel",
+  "build": "turbo run build --filter=@buildforge/api --filter=@buildforge/shared --filter=@buildforge/worker",
+  "build:all": "turbo run build",
+  "lint": "turbo run lint",
+  "typecheck": "turbo run typecheck",
+  "format": "turbo run format",
+  "db:push": "pnpm --filter @buildforge/api prisma db push",
+  "db:generate": "pnpm --filter @buildforge/api prisma generate"
   }
 }
