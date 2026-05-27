@@ -5,7 +5,7 @@ import {
   type GenerationRequest,
   type GenerationResponse,
   type ProjectRecord,
-} from "@buildforge/shared.js";
+} from "@buildforge/shared";
 import { buildQueue } from "../lib/queue.js";
 import { generations, projects } from "../data/memory-store.js";
 
