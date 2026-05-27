@@ -5,9 +5,9 @@ import {
   type GenerationRequest,
   type GenerationResponse,
   type ProjectRecord,
-} from "@buildforge/shared";
-import { buildQueue } from "../lib/queue";
-import { generations, projects } from "../data/memory-store";
+} from "@buildforge/shared.js";
+import { buildQueue } from "../lib/queue.js";
+import { generations, projects } from "../data/memory-store.js";
 
 export async function generateProject(input: unknown): Promise<GenerationResponse> {
   const payload = generationRequestSchema.parse(input);
