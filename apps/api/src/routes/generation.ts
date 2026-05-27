@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { generateProject, listGenerations } from "../services/generation-service";
+import { generateProject, listGenerations } from "../services/generation-service.js";
 
 export const generationRouter = Router();
 
