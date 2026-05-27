@@ -1,10 +1,9 @@
 import { createServer } from "node:http";
 import { Server } from "socket.io";
-import { App } from "./app.js";
-import { env } from "./config/env";
-import { registerCollaboration } from "./socket/collaboration";
+import { app } from "./app.js";
+import { env } from "./config/env.js";
+import { registerCollaboration } from "./socket/collaboration.js";
 
-const app = createApp();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
@@ -14,6 +13,6 @@ const io = new Server(httpServer, {
 
 registerCollaboration(io);
 
-httpServer.listen(env.port, () => {
-  console.log(`BuildForge API listening on http://localhost:${env.port}`);
+httpServer.listen(env.port, "0.0.0.0", () => {
+  console.log(`BuildForge API listening on http://0.0.0.0:${env.port}`);
 });
