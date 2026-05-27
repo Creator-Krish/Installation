@@ -2,11 +2,11 @@ import cors from "cors";
 import express from "express";
 import helmet from "helmet";
 import morgan from "morgan";
-import { healthRouter } from "./routes/health";
-import { projectsRouter } from "./routes/projects";
-import { generationRouter } from "./routes/generation";
-import { deploymentsRouter } from "./routes/deployments";
-import { adminRouter } from "./routes/admin";
+import { healthRouter } from "./routes/health.js";
+import { projectsRouter } from "./routes/projects.js";
+import { generationRouter } from "./routes/generation.js";
+import { deploymentsRouter } from "./routes/deployments.js";
+import { adminRouter } from "./routes/admin.js";
 
 export function createApp() {
   const app = express();
