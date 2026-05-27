@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { z } from "zod";
-import { queueDeployment } from "../services/deployment-service";
+import { queueDeployment } from "../services/deployment-service.js";
 
 export const deploymentsRouter = Router();
 
