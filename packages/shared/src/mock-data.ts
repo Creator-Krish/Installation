@@ -1,4 +1,4 @@
-import type { GenerationResponse, ProjectRecord } from "./types";
+import type { GenerationResponse, ProjectRecord } from "./types.js";
 
 export const demoProjects: ProjectRecord[] = [
   {
