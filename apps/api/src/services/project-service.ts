@@ -1,4 +1,4 @@
-import { projects } from "../data/memory-store";
+import { projects } from "../data/memory-store.js";
 
 export function listProjects() {
   return projects;
